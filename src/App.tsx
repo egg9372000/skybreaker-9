@@ -274,8 +274,7 @@ export default function App() {
 
         // Particles
         for (const p of eng.particles) {
-          const alpha = Math.max(0, 1 - p.ageMs / p.lifeMs);
-          ctx.globalAlpha = alpha;
+          ctx.globalAlpha = Math.max(0, 1 - p.ageMs / p.lifeMs);
           ctx.fillStyle = p.color;
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
@@ -285,8 +284,7 @@ export default function App() {
 
         // Score Popups
         for (const pop of eng.popups) {
-          const alpha = Math.max(0, 1 - pop.ageMs / pop.lifeMs);
-          ctx.globalAlpha = alpha;
+          ctx.globalAlpha = Math.max(0, 1 - pop.ageMs / pop.lifeMs);
           ctx.fillStyle = pop.color;
           ctx.font = '900 18px ui-monospace, monospace';
           ctx.textAlign = 'center';
