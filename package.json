@@ -1,0 +1,27 @@
+{
+  "name": "skybreaker-9",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "SKYBREAKER 9 — 60-Second Esports Booth Precision Arcade Mini-Game (Cloud9 x JetBrains: Sky's The Limit Hackathon 2026)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "preview": "vite preview --port 5177 --strictPort"
+  },
+  "dependencies": {
+    "lucide-react": "^0.511.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.4.1",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.1.3"
+  }
+}
