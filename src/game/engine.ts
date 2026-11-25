@@ -49,7 +49,7 @@ export class SkybreakerEngine {
 
   private nextId = 1;
   private spawnCooldownMs = 250;
-  private rng: () => number;
+  private readonly rng: () => number;
 
   constructor(durationMs: number = DEFAULT_DURATION_MS, rng: () => number = Math.random) {
     this.durationMs = durationMs;
