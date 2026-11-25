@@ -20,11 +20,13 @@
 
 ---
 
-## 🛠️ Tech Stack & JetBrains IDE Workflow
+## 🛠️ Tech Stack & JetBrains IntelliJ IDEA Workflow
 
 - **TypeScript + React 19 + HTML5 60fps Canvas + Vite 6 + Vitest**
 - **Live Browser Demo (GitHub Pages)**: `https://egg9372000.github.io/skybreaker-9/`
-- **JetBrains IDE Workflow**: Open this repository in **JetBrains WebStorm** (free for non-commercial use) or **JetBrains Rider** to run TypeScript static inspections, refactor game modules, and execute the built-in Vitest test runner (`tests/engine.test.ts`).
+- **JetBrains IntelliJ IDEA 2026.3.0.1 (`IU-263.7307.353`)**:
+  - Configured with shared `.idea/` module metadata (`skybreaker-9.iml`, `modules.xml`), `Project_Default.xml` inspection profile, and npm run configurations (`Vitest_Suite.xml`, `Typecheck_Build.xml`).
+  - Audited across all TypeScript, React TSX, CSS, and `package.json` files using IntelliJ IDEA's code inspection engine (`inspect.bat` with `Project Default` profile), resolving `TypeScriptFieldCanBeMadeReadonly` (`src/game/engine.ts`), `UnnecessaryLocalVariableJS` (`src/App.tsx`), `CssNoGenericFontName` & `CssNonIntegerLengthInPixels` (`src/styles.css`), and `VulnerableLibrariesLocal` (`CVE-2026-84373` on `vitest`, upgraded to `4.1.11`).
 
 ```bash
 npm install
