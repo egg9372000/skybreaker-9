@@ -1,0 +1,306 @@
+:root {
+  --bg: #050a14;
+  --panel: #0b1324;
+  --panel-alt: #101b33;
+  --border: rgba(56, 189, 248, 0.22);
+  --sky: #00aeef;
+  --gold: #facc15;
+  --violet: #a855f7;
+  --crimson: #f43f5e;
+  --emerald: #10b981;
+  --text: #f8fafc;
+  --dim: #94a3b8;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: radial-gradient(circle at 50% 0%, #0e2242 0%, var(--bg) 68%);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+.sb-shell {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 14px 16px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sb-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(11, 19, 36, 0.9);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.sb-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sb-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #00aeef 0%, #2563eb 100%);
+  color: #031120;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  box-shadow: 0 0 18px rgba(0, 174, 239, 0.45);
+}
+
+.sb-brand h1 {
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+}
+
+.sb-brand p {
+  font-size: 11px;
+  color: var(--dim);
+}
+
+.sb-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chip-btn {
+  padding: 6px 11px;
+  border-radius: 9px;
+  background: var(--panel-alt);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--dim);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.chip-btn.active {
+  background: rgba(0, 174, 239, 0.16);
+  border-color: var(--sky);
+  color: #e0f2fe;
+}
+
+/* HUD Bar */
+.hud-bar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.hud-tile {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 9px 13px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hud-lbl {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dim);
+  font-family: var(--mono);
+}
+
+.hud-val {
+  font-family: var(--mono);
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+/* Arena Stage */
+.arena-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #060d1c;
+  border: 2px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
+}
+
+.arena-frame.overdrive {
+  border-color: var(--violet);
+  box-shadow: 0 0 36px rgba(168, 85, 247, 0.45);
+}
+
+.arena-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.arena-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 10, 20, 0.8);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  gap: 14px;
+}
+
+.attract-title {
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  background: linear-gradient(90deg, #ffffff 0%, #38bdf8 55%, #facc15 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.legend-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  max-width: 760px;
+  width: 100%;
+}
+
+.legend-pill {
+  background: rgba(16, 27, 51, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 11px;
+  padding: 9px 10px;
+  font-size: 11.5px;
+}
+
+.legend-pill strong {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.play-cta {
+  padding: 14px 32px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #00aeef 0%, #2563eb 100%);
+  color: #031120;
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 0 28px rgba(0, 174, 239, 0.5);
+  transition: transform 0.12s ease;
+}
+
+.play-cta:hover {
+  transform: translateY(-2px);
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  max-width: 580px;
+  width: 100%;
+}
+
+.initials-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.initials-input {
+  width: 108px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #0b1324;
+  border: 2px solid var(--sky);
+  color: #fff;
+}
+
+/* Booth Hall of Fame */
+.lb-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 8px;
+}
+
+.lb-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 11px;
+  border-radius: 10px;
+  background: var(--panel-alt);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--mono);
+  font-size: 12.5px;
+}
+
+.lb-pill.top {
+  border-color: rgba(250, 204, 21, 0.45);
+  background: rgba(250, 204, 21, 0.08);
+}
+
+@media (max-width: 680px) {
+  .hud-bar,
+  .legend-cards,
+  .result-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
